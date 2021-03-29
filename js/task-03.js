@@ -19,13 +19,6 @@ const images = [
 const galleryUl = document.querySelector('#gallery');
 galleryUl.classList.add('gallery-list')
 
-function createElement(arr) {
- const imagesLi = arr.map(element => {
-     const itemList = document.createElement('li')
-     itemList.insertAdjacentHTML(`beforeend`, `<img src="${element.url}" alt="${element.alt}">`)
-     itemList.classList.add('gallery-list__item')
-     return itemList
-    });
-    return galleryUl.prepend(...imagesLi)
-}
-createElement(images)
+const imagesLi = images.map(el => el = `<li class="gallery-list__item"> <img src="${el.url}" alt="${el.alt}" /> </li>`)
+
+galleryUl.insertAdjacentHTML(`beforeend`, imagesLi)

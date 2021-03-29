@@ -3,9 +3,11 @@ const validationInput = input.dataset.length;
 
 
 function inputAction(action) {
-    return action.target.value.length == validationInput
-        ? input.classList.add('valid')
-        : input.classList.add('invalid')
+    if (action.target.value.length == validationInput) {
+        input.setAttribute('class', 'valid')
+    } else { input.setAttribute('class', 'invalid')}
+        
+       
 }
 
 input.addEventListener('blur', inputAction);
